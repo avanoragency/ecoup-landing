@@ -219,6 +219,74 @@ footer .ancho{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 .burbuja:hover{transform:scale(1.08)}
 .burbuja .ico{width:30px;height:30px}
 
+/* ---- Versión de venta: portada oscura, cinta, comparación, banda y barra fija ---- */
+.btn-g{padding:18px 28px;font-size:17.5px}
+.btn-o{background:var(--tinta);color:#fff}
+.btn-o .ico{color:var(--wa)}
+.btn-o:hover{background:#000}
+.late{position:relative}
+.late::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:late 2.4s ease-out infinite;pointer-events:none}
+@keyframes late{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%,100%{box-shadow:0 0 0 16px rgba(37,211,102,0)}}
+.res{background:linear-gradient(transparent 62%,rgba(200,85,61,.32) 0);padding:0 .08em}
+
+.portada{color:var(--claro);padding:72px 0 76px;background:
+  radial-gradient(900px 520px at 88% -8%,rgba(37,211,102,.20),transparent 62%),
+  radial-gradient(820px 520px at -8% 108%,rgba(200,85,61,.34),transparent 62%),
+  var(--tinta)}
+.portada .mono{color:#E88E79}
+.portada h1{font-size:clamp(42px,5.6vw,76px);margin:14px 0 20px}
+.portada{padding-top:52px}
+.portada h1 em{color:#F3A592}
+.portada .sub{color:#B8C4BD}
+.portada .btn-s{border-color:rgba(249,247,242,.5);color:var(--claro)}
+.portada .btn-s:hover{background:var(--claro);color:var(--tinta)}
+.portada .alerta{color:var(--claro);background:rgba(200,85,61,.22);border-color:rgba(232,142,121,.6)}
+.portada .alerta:hover{background:rgba(200,85,61,.36)}
+.portada .escena{box-shadow:0 30px 70px -30px rgba(0,0,0,.8);outline:1px solid rgba(249,247,242,.14)}
+.portada .indice button{border-bottom-color:rgba(249,247,242,.18)}
+.portada .indice button::after{background:#E88E79}
+.portada .indice .n{color:#E88E79}
+.portada .indice .f{color:#8FA097}
+.portada .indice button.on .t,.portada .indice button:hover .t{color:#F3A592}
+.garantias{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14.5px;color:#B8C4BD}
+.garantias li::before{content:"✓";color:var(--wa);font-weight:700;margin-right:7px}
+
+.cinta{background:var(--acento);color:#fff;overflow:hidden;white-space:nowrap;padding:15px 0}
+.cinta-m{display:inline-block;animation:cinta 38s linear infinite}
+.cinta span{font-weight:600;font-size:16px;letter-spacing:.02em;margin-right:18px}
+.cinta span::after{content:"✦";margin-left:18px;opacity:.7}
+@keyframes cinta{to{transform:translateX(-50%)}}
+
+.compara-g{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.compara .col{border-radius:8px;padding:34px}
+.compara h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.1;margin-bottom:18px}
+.compara ul{list-style:none;margin:0;padding:0}
+.compara li{position:relative;padding:14px 0 14px 38px;border-top:1px solid var(--linea);font-size:17px}
+.compara li::before{position:absolute;left:0;top:13px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
+.compara .no{background:var(--papel-2);color:var(--gris)}
+.compara .no h3{color:var(--tinta)}
+.compara .no li::before{content:"✕";background:rgba(200,85,61,.16);color:var(--acento)}
+.compara .si{background:var(--bosque);color:var(--claro);box-shadow:0 30px 60px -30px rgba(14,59,44,.7);transform:translateY(-10px)}
+.js .compara .si.rv{transform:translateY(18px)}
+.js .compara .si.rv.v{transform:translateY(-10px)}
+.compara .si li{border-top-color:rgba(249,247,242,.18)}
+.compara .si li::before{content:"✓";background:var(--wa);color:#06281A}
+.compara .si .btn{margin-top:22px}
+
+.banda{background:var(--acento);color:#fff;padding:56px 0}
+.banda-g{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.banda h2{font-size:clamp(30px,3.6vw,46px);max-width:680px}
+.banda p{margin-top:10px;font-size:18px;opacity:.92}
+
+.cierre{position:relative;overflow:hidden;background:
+  radial-gradient(800px 500px at 100% 0,rgba(37,211,102,.20),transparent 60%),
+  radial-gradient(700px 480px at 0 100%,rgba(200,85,61,.30),transparent 60%),
+  var(--tinta)}
+
+.fija{position:fixed;left:50%;bottom:22px;z-index:25;transform:translate(-50%,160%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;gap:18px;padding:10px 10px 10px 24px;border-radius:999px;background:var(--tinta);color:var(--claro);box-shadow:0 18px 44px -14px rgba(0,0,0,.6);font-size:15.5px;white-space:nowrap}
+.fija.on{transform:translate(-50%,0)}
+.fija .btn{padding:11px 18px;font-size:15px}
+
 /* Encuesta */
 dialog{border:0;padding:0;border-radius:10px;background:var(--papel);color:var(--tinta);width:min(540px,calc(100vw - 24px));max-height:calc(100dvh - 24px);box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
 dialog::backdrop{background:rgba(14,30,22,.62);backdrop-filter:blur(3px)}
@@ -257,6 +325,15 @@ dialog[open]{animation:entra .25s ease}
   .mosaico{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 6px;gap:10px}
   .mosaico figure{flex:0 0 82%;aspect-ratio:4/3;scroll-snap-align:center}
   .escena{aspect-ratio:16/9}
+  .portada{padding:44px 0 52px}
+  .compara-g{grid-template-columns:1fr}
+  .compara .col{padding:24px}
+  .compara .si,.js .compara .si.rv.v{transform:none}
+  .compara h3{font-size:28px}
+  .banda{padding:44px 0}
+  .banda .btn{width:100%}
+  .fija{display:none}
+  .garantias{flex-direction:column;gap:6px}
   .riesgo{padding:60px 0}
   .r-multa{padding:24px}
   .alerta{border-radius:14px}
@@ -334,11 +411,16 @@ dialog[open]{animation:entra .25s ease}
       <p class="mono">Consultoría ambiental para empresas</p>
       <h1 class="serif">Evita multas, cierres y sobrecostos ambientales <em>antes</em> de que lleguen.</h1>
       <p class="sub">Ayudamos a las empresas a identificar riesgos ambientales, prevenir incumplimientos, reducir costos y fortalecer su desempeño ambiental.</p>
-      <a class="alerta" href="#riesgo"><b>!</b><span>Las multas ambientales hoy llegan hasta <strong>100.000 salarios mínimos</strong>. Ver qué arriesgas →</span></a>
       <div class="acciones">
-        <button type="button" class="btn btn-wa" data-encuesta><svg class="ico"><use href="#wa"/></svg>Hablar con un asesor</button>
+        <button type="button" class="btn btn-wa btn-g late" data-encuesta><svg class="ico"><use href="#wa"/></svg>Revisar mi riesgo por WhatsApp</button>
         <a class="btn btn-s" href="#selector">¿Por dónde empiezo?</a>
       </div>
+      <ul class="garantias">
+        <li>4 preguntas, menos de un minuto</li>
+        <li>Sin compromiso</li>
+        <li>Te responde un asesor de ECO UP</li>
+      </ul>
+      <a class="alerta" href="#riesgo"><b>!</b><span>Las multas ambientales hoy llegan hasta <strong>100.000 salarios mínimos</strong>. Ver qué arriesgas →</span></a>
     </div>
     <div>
       <div class="escena" id="escena">
@@ -355,14 +437,10 @@ dialog[open]{animation:entra .25s ease}
   </div>
 </section>
 
-<div class="franja">
-  <div class="ancho">
-    <ul>
-      <li><span>A</span>Identificar riesgos ambientales</li>
-      <li><span>B</span>Prevenir incumplimientos y sanciones</li>
-      <li><span>C</span>Reducir costos</li>
-      <li><span>D</span>Fortalecer el desempeño ambiental</li>
-    </ul>
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-m">
+    <span>Identificar riesgos ambientales</span><span>Prevenir multas y sanciones</span><span>Reducir costos</span><span>Fortalecer el desempeño ambiental</span><span>Auditar a tu gestor de residuos</span><span>Aprovechar materiales y subproductos</span>
+    <span>Identificar riesgos ambientales</span><span>Prevenir multas y sanciones</span><span>Reducir costos</span><span>Fortalecer el desempeño ambiental</span><span>Auditar a tu gestor de residuos</span><span>Aprovechar materiales y subproductos</span>
   </div>
 </div>
 
@@ -387,6 +465,35 @@ dialog[open]{animation:entra .25s ease}
     <div class="riesgo-pie rv">
       <button type="button" class="btn btn-wa" data-encuesta><svg class="ico"><use href="#wa"/></svg>Revisar mi riesgo ahora</button>
       <p class="fuente">Referencias: Ley 1333 de 2009, modificada por la Ley 2387 de 2024 (art. 40), y Decreto 1076 de 2015 (art. 2.2.6.1.3.3).</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARACIÓN -->
+<section class="bloque compara" id="compara">
+  <div class="ancho">
+    <p class="mono rv">La diferencia</p>
+    <h2 class="serif rv">Enterarte por la autoridad o <span class="res">enterarte antes</span>.</h2>
+    <div class="compara-g">
+      <div class="col no rv">
+        <h3>Si esperas a la visita</h3>
+        <ul>
+          <li>Te enteras del incumplimiento cuando ya hay un requerimiento.</li>
+          <li>No sabes qué hizo tu gestor con los residuos que entregaste.</li>
+          <li>Pagas por tratar o disponer materiales que podrían aprovecharse.</li>
+          <li>Le respondes a tu cliente sin evidencias que mostrar.</li>
+        </ul>
+      </div>
+      <div class="col si rv" style="--d:.12s">
+        <h3>Si lo revisas con ECO UP</h3>
+        <ul>
+          <li>Sabes qué estás incumpliendo y en qué orden corregirlo.</li>
+          <li>Tienes la trazabilidad verificada hasta el destino autorizado.</li>
+          <li>Sabes qué materiales pueden convertirse en ahorro.</li>
+          <li>Tienes informes, matrices y planes de acción para mostrar.</li>
+        </ul>
+        <button type="button" class="btn btn-wa late" data-encuesta><svg class="ico"><use href="#wa"/></svg>Quiero enterarme antes</button>
+      </div>
     </div>
   </div>
 </section>
@@ -501,6 +608,33 @@ dialog[open]{animation:entra .25s ease}
   </div>
 </section>
 
+<!-- BANDA DE URGENCIA -->
+<section class="banda">
+  <div class="ancho banda-g">
+    <div>
+      <h2 class="serif">¿Tienes una visita, un requerimiento o una auditoría cerca?</h2>
+      <p>Dinos la fecha y te decimos por dónde empezar para llegar preparado.</p>
+    </div>
+    <button type="button" class="btn btn-o btn-g" data-encuesta data-plazo="Es urgente"><svg class="ico"><use href="#wa"/></svg>Es urgente, escríbanme hoy</button>
+  </div>
+</section>
+
+<!-- EQUIPO EN CAMPO -->
+<section class="bloque" id="equipo">
+  <div class="ancho">
+    <p class="mono rv">Nuestro equipo en campo</p>
+    <h2 class="serif rv">Vamos hasta tu operación y capacitamos a tu gente.</h2>
+    <div class="mosaico rv">
+      <figure class="grande"><img src="img/equipo-asesoria.jpg" alt="Asesor de ECO UP explica un procedimiento a un trabajador en su lugar de trabajo" width="1200" height="900" loading="lazy"></figure>
+      <figure><img src="img/equipo-salon.jpg" alt="Capacitación de ECO UP a un equipo de trabajo en su establecimiento" width="1200" height="675" loading="lazy"></figure>
+      <figure><img src="img/equipo-estudio.jpg" alt="Asesor de ECO UP en una charla con un grupo, junto a un extintor" width="1200" height="900" loading="lazy"></figure>
+      <figure><img src="img/equipo-barberia.jpg" alt="Asesor de ECO UP muestra un documento durante una capacitación" width="1200" height="900" loading="lazy"></figure>
+      <figure><img src="img/equipo-unas.jpg" alt="Sesión de sensibilización de ECO UP con el personal de un establecimiento" width="1200" height="900" loading="lazy"></figure>
+    </div>
+    <p class="pie-foto rv">Capacitación y sensibilización en sitio. Los rostros de los asistentes se difuminan para proteger su privacidad.</p>
+  </div>
+</section>
+
 <!-- COMPLEMENTARIOS -->
 <section class="bloque" id="complementarios">
   <div class="ancho">
@@ -540,30 +674,14 @@ dialog[open]{animation:entra .25s ease}
 <!-- CÓMO TRABAJAMOS: pasos propuestos, pendientes de confirmar con ECO UP -->
 <section class="bloque" id="proceso">
   <div class="ancho">
-    <p class="mono rv">Cómo trabajamos</p>
-    <h2 class="serif rv">De la primera conversación al plan de acción.</h2>
+    <p class="mono rv">Qué pasa cuando nos escribes</p>
+    <h2 class="serif rv">De tu mensaje al plan de acción, <span class="res">sin vueltas</span>.</h2>
     <div class="pasos">
       <div class="rv" style="--d:0s"><h3>Conversamos</h3><p>Nos cuentas qué hace tu empresa y qué te preocupa. Definimos el alcance.</p></div>
       <div class="rv" style="--d:.12s"><h3>Revisamos</h3><p>Analizamos documentos, procesos e instalaciones según la línea que necesites.</p></div>
       <div class="rv" style="--d:.24s"><h3>Entregamos</h3><p>Recibes un informe claro con hallazgos, prioridades y acciones propuestas.</p></div>
       <div class="rv" style="--d:.36s"><h3>Acompañamos</h3><p>Hacemos seguimiento hasta cerrar los hallazgos, si así lo quieres.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- EQUIPO EN CAMPO -->
-<section class="bloque" id="equipo">
-  <div class="ancho">
-    <p class="mono rv">Nuestro equipo en campo</p>
-    <h2 class="serif rv">Vamos hasta tu operación y capacitamos a tu gente.</h2>
-    <div class="mosaico rv">
-      <figure class="grande"><img src="img/equipo-asesoria.jpg" alt="Asesor de ECO UP explica un procedimiento a un trabajador en su lugar de trabajo" width="1200" height="900" loading="lazy"></figure>
-      <figure><img src="img/equipo-salon.jpg" alt="Capacitación de ECO UP a un equipo de trabajo en su establecimiento" width="1200" height="675" loading="lazy"></figure>
-      <figure><img src="img/equipo-estudio.jpg" alt="Asesor de ECO UP en una charla con un grupo, junto a un extintor" width="1200" height="900" loading="lazy"></figure>
-      <figure><img src="img/equipo-barberia.jpg" alt="Asesor de ECO UP muestra un documento durante una capacitación" width="1200" height="900" loading="lazy"></figure>
-      <figure><img src="img/equipo-unas.jpg" alt="Sesión de sensibilización de ECO UP con el personal de un establecimiento" width="1200" height="900" loading="lazy"></figure>
-    </div>
-    <p class="pie-foto rv">Capacitación y sensibilización en sitio. Los rostros de los asistentes se difuminan para proteger su privacidad.</p>
   </div>
 </section>
 
@@ -608,9 +726,14 @@ dialog[open]{animation:entra .25s ease}
     <h2 class="serif">Corrige hoy lo que mañana puede ser una sanción.</h2>
     <p>Responde cuatro preguntas rápidas y te abrimos WhatsApp con tu mensaje listo, para que un asesor te oriente sobre la línea que más le conviene a tu operación.</p>
     <div class="acciones">
-      <button type="button" class="btn btn-wa" data-encuesta><svg class="ico"><use href="#wa"/></svg>Escribir por WhatsApp</button>
+      <button type="button" class="btn btn-wa btn-g late" data-encuesta><svg class="ico"><use href="#wa"/></svg>Revisar mi riesgo por WhatsApp</button>
       <a class="btn btn-s" id="llamar" href="tel:+573115095976">Llamar al 311 509 5976</a>
     </div>
+    <ul class="garantias">
+      <li>4 preguntas, menos de un minuto</li>
+      <li>Sin compromiso</li>
+      <li>Te responde un asesor de ECO UP</li>
+    </ul>
   </div>
 </section>
 
@@ -623,9 +746,12 @@ dialog[open]{animation:entra .25s ease}
   </div>
 </footer>
 
-<button type="button" class="burbuja" data-encuesta aria-label="Escribir por WhatsApp"><svg class="ico"><use href="#wa"/></svg></button>
+<div class="fija" id="fija">
+  <span><b>¿Tu empresa está cumpliendo?</b> Revísalo en un minuto.</span>
+  <button type="button" class="btn btn-wa" data-encuesta><svg class="ico"><use href="#wa"/></svg>Revisar mi riesgo</button>
+</div>
 <div class="barra-movil">
-  <button type="button" class="btn btn-wa" data-encuesta><svg class="ico"><use href="#wa"/></svg>Hablar por WhatsApp</button>
+  <button type="button" class="btn btn-wa" data-encuesta><svg class="ico"><use href="#wa"/></svg>Revisar mi riesgo por WhatsApp</button>
 </div>
 
 <!-- ENCUESTA PREVIA A WHATSAPP -->
@@ -680,6 +806,7 @@ dialog[open]{animation:entra .25s ease}
     r = { servicio: pre.servicio || "" };
     if (pre.tipo) r.tipo = pre.tipo;
     if (pre.linea) r.linea = pre.linea;
+    if (pre.plazo) r.plazo = pre.plazo;
     cola = PREGUNTAS.filter(function (p) { return !r[p.id]; });
     pos = 0; vista = "pregunta";
     pintar();
@@ -703,7 +830,9 @@ dialog[open]{animation:entra .25s ease}
       var p = cola[pos];
       cuenta.textContent = "Pregunta " + (pos + 1) + " de " + cola.length;
       barra.style.width = (pos / total * 100) + "%";
-      cuerpo.innerHTML = '<div class="paso"><h3 id="enc-titulo">' + p.titulo + '</h3><div class="ops' + (p.dos ? " dos" : "") + '">' +
+      cuerpo.innerHTML = '<div class="paso"><h3 id="enc-titulo">' + p.titulo + '</h3>' +
+        (pos === 0 ? '<p class="ayuda">Son ' + cola.length + ' preguntas de un toque. Al final te abrimos WhatsApp con tu caso listo.</p>' : "") +
+        '<div class="ops' + (p.dos ? " dos" : "") + '">' +
         p.ops.map(function (o) {
           return '<button type="button" data-v="' + esc(o[0]) + '"' + (r[p.id] === o[0] ? ' class="sel"' : "") + ">" + esc(o[0]) + (o[1] ? "<small>" + esc(o[1]) + "</small>" : "") + "</button>";
         }).join("") + "</div></div>";
@@ -723,7 +852,8 @@ dialog[open]{animation:entra .25s ease}
       '<label for="enc-nombre">Tu nombre</label><input id="enc-nombre" autocomplete="name" maxlength="60" value="' + esc(r.nombre || "") + '">' +
       '<label for="enc-empresa">Empresa</label><input id="enc-empresa" autocomplete="organization" maxlength="80" value="' + esc(r.empresa || "") + '">' +
       '<div class="resumen">' + esc(r.tipo) + " · " + esc(r.tam) + "<br>" + esc(r.linea) + (r.servicio ? " → " + esc(r.servicio) : "") + "<br>" + esc(r.plazo) + "</div>" +
-      '<button type="button" class="btn btn-wa" id="enc-enviar">' + ICO + "Enviar por WhatsApp</button></div>";
+      '<button type="button" class="btn btn-wa btn-g" id="enc-enviar">' + ICO + "Enviar por WhatsApp</button>" +
+      '<p class="ayuda" style="margin:12px 0 0;text-align:center">Te responde un asesor de ECO UP. Sin compromiso.</p></div>';
     $("#enc-nombre").focus();
     $("#enc-enviar").onclick = enviar;
     $("#enc-nombre").onkeydown = $("#enc-empresa").onkeydown = function (e) { if (e.key === "Enter") enviar(); };
@@ -775,7 +905,7 @@ dialog[open]{animation:entra .25s ease}
   document.addEventListener("click", function (e) {
     var b = e.target.closest("[data-encuesta]");
     if (!b) return;
-    abrir({ tipo: b.getAttribute("data-tipo"), linea: b.getAttribute("data-linea"), servicio: b.getAttribute("data-servicio") });
+    abrir({ tipo: b.getAttribute("data-tipo"), linea: b.getAttribute("data-linea"), servicio: b.getAttribute("data-servicio"), plazo: b.getAttribute("data-plazo") });
   });
 
   /* ---------- Portada: imágenes que cambian con el índice ---------- */
@@ -819,6 +949,9 @@ dialog[open]{animation:entra .25s ease}
   function alScroll() {
     var h = document.documentElement.scrollHeight - innerHeight;
     av.style.transform = "scaleX(" + (h > 0 ? scrollY / h : 0) + ")";
+    // Barra fija de escritorio: aparece al pasar la portada y se oculta al llegar al cierre
+    var fin = $("#contacto").getBoundingClientRect().top;
+    $("#fija").classList.toggle("on", scrollY > 640 && fin > innerHeight * 0.7);
   }
   addEventListener("scroll", alScroll, { passive: true }); alScroll();
 
